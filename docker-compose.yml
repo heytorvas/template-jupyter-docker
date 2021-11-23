@@ -1,0 +1,13 @@
+version: '3.0'
+services:
+  jupyter:
+    build: ./jupyter/
+    container_name: jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+      - "./notebooks:/home/jovyan/work"
+    environment:
+      - GRANT_SUDO=yes
+      - CHOWN_HOME=yes
+    command: ["jupyter", "notebook", "--no-browser", "--port", "8888", "--ip", "0.0.0.0", "--allow-root"]
