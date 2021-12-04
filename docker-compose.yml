@@ -10,4 +10,5 @@ services:
     environment:
       - GRANT_SUDO=yes
       - CHOWN_HOME=yes
+      - JUPYTER_TOKEN=jupyter
     command: ["jupyter", "notebook", "--no-browser", "--port", "8888", "--ip", "0.0.0.0", "--allow-root"]
